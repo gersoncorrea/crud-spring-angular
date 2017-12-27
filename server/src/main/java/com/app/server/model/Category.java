@@ -5,16 +5,16 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="origins")
+@Document(collection="categories")
 
-public class Origin{
+public class Category{
     @Id
     private String id;
     @NotBlank
     @Size(max=100)
     private String name;
 
-    public Origin(){
+    public Category(){
         super();
     }
 
@@ -37,7 +37,7 @@ public class Origin{
     @Override
     public String toString() {
         return String.format(
-                "Origin[id=%s, name='%s', description='%s', image='%s']",
+                "Category[id=%s, name='%s']",
                 id, name);
     }
 }
